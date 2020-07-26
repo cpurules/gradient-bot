@@ -1,5 +1,6 @@
 import discord
 import json
+import lib.gradient
 import os
 import sys
 
@@ -45,6 +46,13 @@ async def on_message(message):
         return
 
     if message.content == '!gradient':
-        await message.channel.send('You want a gradient?  Here you go!')
+        print(f'Generating gradient for {message.author}')
+
+        lib.gradient.createRandomGradient(filename=message.author.id)
+        print(f'Gradient {message.author.id}.png generated, sending')
+
+        gradientFile = discord.File(f'{message.author.id}.png', filename='gradient.png')
+        await message.channel.send(file = gradientFile, content = f'{message.author.mention} here you go!')
+        os.remove(f'{message.author.id}.png')
 
 client.run(DISCORD_TOKEN)
