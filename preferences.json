@@ -1,3 +1,4 @@
 {
-    "DISCORD_TOKEN": "xxxxxxx"
+    "DISCORD_TOKEN": "",
+    "DISCORD_GUILD": ""
 }
