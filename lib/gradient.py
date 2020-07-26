@@ -12,7 +12,10 @@ def getRandomRGB(min = 0, max = 255):
     return [random.randrange(min, max), random.randrange(min, max), random.randrange(min, max)]
 
 def createRandomGradient(size = (1024, 1024), filename='gradient'):
-    gradientCenter = (random.randrange(0, size[0]), random.randrange(0, size[1]))
+    tenPercentX = int(size[0] / 10)
+    tenPercentY = int(size[1] / 10)
+
+    gradientCenter = (random.randrange(tenPercentX, size[0] - tenPercentX), random.randrange(tenPercentY, size[1] - tenPercentY))
 
     gradient = Image.new('RGBA', size)
 
