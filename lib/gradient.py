@@ -11,7 +11,7 @@ def getNormalizedDistance(point1, point2):
 def getRandomRGB(min = 0, max = 255):
     return [random.randrange(min, max), random.randrange(min, max), random.randrange(min, max)]
 
-def createRandomGradient(size = (1024, 1024)):
+def createRandomGradient(size = (1024, 1024), filename='gradient'):
     gradientCenter = (random.randrange(0, size[0]), random.randrange(0, size[1]))
 
     gradient = Image.new('RGBA', size)
@@ -39,4 +39,4 @@ def createRandomGradient(size = (1024, 1024)):
 
     gradient.putalpha(gradientAlpha)
 
-    gradient.save('gradient.png')
+    gradient.save(f'{filename}.png')
