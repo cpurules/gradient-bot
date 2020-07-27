@@ -44,17 +44,21 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == client.user or message.author.id in requesters:
+        if(message.author.id in requesters):
+            print(f'{message.author} already has a request in')
         return
 
     if message.content == '!gradient':
         print(f'Generating gradient for {message.author}')
+        requesters.append(message.author.id)
 
-        await lib.gradient.createRandomGradient(filename=message.id)
+        lib.gradient.createRandomGradient(filename=message.id)
         print(f'Gradient {message.id}.png generated, sending')
 
         gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
         await message.channel.send(file = gradientFile, content = f'{message.author.mention} here you go!')
-        os.remove(f'{message.author.id}.png')
+        os.remove(f'{message.id}.png')
+        requesters.remove(message.author.id)
 
 client.run(DISCORD_TOKEN)
