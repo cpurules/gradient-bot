@@ -1,3 +1,4 @@
+import asyncio
 import random
 import math
 from PIL import Image, ImageDraw
@@ -11,7 +12,7 @@ def getNormalizedDistance(point1, point2):
 def getRandomRGB(min = 0, max = 255):
     return [random.randrange(min, max), random.randrange(min, max), random.randrange(min, max)]
 
-def createRandomGradient(size = (1024, 1024), filename='gradient'):
+async def createRandomGradient(size = (1024, 1024), filename='gradient'):
     tenPercentX = int(size[0] / 10)
     tenPercentY = int(size[1] / 10)
 
