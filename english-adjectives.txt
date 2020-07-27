@@ -294,7 +294,6 @@ dry
 dual
 dull
 dutiful
-each
 eager
 earnest
 early
@@ -324,6 +323,7 @@ enormous
 enraged
 entire
 envious
+epic
 equal
 equatorial
 essential

@@ -58,15 +58,12 @@ business
 bus
 buy
 cake
-call
 can
 candle
 cap
 car
 card
 care
-carry
-case
 cat
 catch
 chair
@@ -85,13 +82,11 @@ coffee
 coat
 cold
 comfort
-common
 computer
 condition
 control
 cook
 corner
-cost
 count
 country
 course
@@ -106,7 +101,6 @@ dark
 daughter
 day
 dead
-deep
 desk
 dinner
 direction
@@ -207,7 +201,6 @@ help
 hide
 high
 hit
-hold
 hole
 holiday
 home
@@ -228,7 +221,6 @@ iron
 invite
 island
 job
-join
 juice
 jump
 keep
@@ -248,7 +240,6 @@ leave
 leg
 length
 lesson
-let
 letter
 library
 lie
@@ -267,7 +258,6 @@ main
 make
 male
 man
-many
 map
 mark
 market
@@ -365,9 +355,6 @@ problem
 produce
 promise
 public
-pull
-push
-put
 queen
 question
 quiet
@@ -434,7 +421,6 @@ silly
 silver
 simple
 single
-sing
 sink
 sister
 size
@@ -542,7 +528,6 @@ wear
 weather
 wedding
 week
-weight
 welcome
 west
 wheel
