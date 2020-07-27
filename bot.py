@@ -2,6 +2,7 @@ import discord
 import json
 import lib.gradient
 import os
+import random
 import sys
 
 # ready preference
