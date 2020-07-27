@@ -25,6 +25,8 @@ DISCORD_GUILD = prefs['DISCORD_GUILD']
 
 client = discord.Client()
 
+requesters = []
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -51,7 +53,7 @@ async def on_message(message):
         lib.gradient.createRandomGradient(filename=message.author.id)
         print(f'Gradient {message.author.id}.png generated, sending')
 
-        gradientFile = discord.File(f'{message.author.id}.png', filename='gradient.png')
+        gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
         await message.channel.send(file = gradientFile, content = f'{message.author.mention} here you go!')
         os.remove(f'{message.author.id}.png')
 
