@@ -29,9 +29,10 @@ client = discord.Client()
 requesters = []
 
 adjectives = []
-nounes = []
+nouns = []
 
 def loadWordList():
+    global adjectives, nouns
     adjectives = open('english-adjectives.txt').read().splitlines()
     nouns = open('english-nouns.txt').read().splitlines()
 
