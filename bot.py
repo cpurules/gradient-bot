@@ -67,7 +67,7 @@ async def on_message(message):
         os.remove(f'{message.id}.png')
         requesters.remove(message.author.id)
 
-async def getGradient(filename):
-    lib.gradient.createRandomGradient(filename)
+async def getGradient(f):
+    lib.gradient.createRandomGradient(filename=f)
 
 client.run(DISCORD_TOKEN)
