@@ -19,8 +19,8 @@ def createRandomGradient(size = (1024, 1024), filename='gradient'):
 
     gradient = Image.new('RGBA', size)
 
-    color1 = getRandomRGB(min = 30, max = 200)
-    color2 = getRandomRGB(min = 30, max = 200)
+    color1 = getRandomRGB(min = 0, max = 255)
+    color2 = getRandomRGB(min = 0, max = 255)
     
     # https://stackoverflow.com/questions/30608035/plot-circular-gradients-using-pil-in-python
     for y in range(size[1]):
