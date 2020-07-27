@@ -28,8 +28,14 @@ client = discord.Client()
 
 requesters = []
 
-adjectives = open('english-adjectives.txt').read().splitlines()
-nouns = open('english-nouns.txt').read().splitlines()
+adjectives = []
+nounes = []
+
+def loadWordList():
+    adjectives = open('english-adjectives.txt').read().splitlines()
+    nouns = open('english-nouns.txt').read().splitlines()
+
+loadWordList()
 
 @client.event
 async def on_ready():
@@ -63,10 +69,19 @@ async def on_message(message):
         gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nouns).capitalize()
 
         gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
-        await message.channel.send(file = gradientFile, content = (f'{message.author.mention} here you go!  I call this one **' + gradientName + '**'))
 
-        os.remove(f'{message.id}.png')
-        requesters.remove(message.author.id)
+        try:
+            await message.channel.send(file = gradientFile, content = (f'{message.author.mention} here you go!  I call this one **' + gradientName + '**'))
+        except:
+            print(f'Error sending gradient for {message.author}')
+        finally:
+            os.remove(f'{message.id}.png')
+            requesters.remove(message.author.id)
+    
+    if message.content == '!reload':
+        print(f'Reloading word list!')
+        loadWordList()
+
 
 async def getGradient(f):
     lib.gradient.createRandomGradient(filename=f)
