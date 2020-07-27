@@ -27,6 +27,9 @@ client = discord.Client()
 
 requesters = []
 
+adjectives = open('english-adjectives.txt').read().splitlines()
+nouns = open('english-nouns.txt').read().splitlines()
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -56,8 +59,11 @@ async def on_message(message):
         lib.gradient.createRandomGradient(filename=message.id)
         print(f'Gradient {message.id}.png generated, sending')
 
+        gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nounes).capitalize()
+
         gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
-        await message.channel.send(file = gradientFile, content = f'{message.author.mention} here you go!')
+        await message.channel.send(file = gradientFile, content = (f'{message.author.mention} here you go!  I call this one **' + gradientName + '**'))
+
         os.remove(f'{message.id}.png')
         requesters.remove(message.author.id)
 
