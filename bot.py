@@ -1,3 +1,4 @@
+import discord
 import json
 import lib.gradient
 import os
