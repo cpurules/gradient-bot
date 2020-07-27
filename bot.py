@@ -53,7 +53,7 @@ async def on_message(message):
             print(f'{message.author} already has a request in')
         return
 
-    if message.content == '!gradient':
+    if message.content == '!gradient' or message.content == '!g':
         print(f'Generating gradient for {message.author}')
         requesters.append(message.author.id)
 
