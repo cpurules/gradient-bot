@@ -12,6 +12,71 @@ def getNormalizedDistance(point1, point2):
 def getRandomRGB(min = 0, max = 255):
     return [random.randrange(min, max), random.randrange(min, max), random.randrange(min, max)]
 
+def RGB2HSV(rgb):
+    r, g, b = rgb
+    r1, g1, b1 = (r / 255, g / 255, b / 255)
+    
+    cMax = max(r1, g1, b1)
+    cMin = min(r1, g1, b1)
+    cDelta = cMax - cMin
+
+    if cDelta == 0:
+        hue = 0
+    else:
+        if cMax == r1:
+            hue = 60 * (((g1 - b1) / cDelta) % 6)
+        elif cMax == b1:
+            hue = 60 * ((b1 - r1) / cDelta + 2)
+        else:
+            hue = 60 * ((r1 - b1) / cDelta + 4)
+    
+    if cMax == 0:
+        saturation = 0
+    else:
+        saturation = cDelta / cMax
+    
+    value = cMax
+
+    return (hue, saturation, value)
+
+def HSV2RGB(hsv):
+    h, s, v = hsv
+
+    c = v * s
+    x = c * (1 - abs((h / 60) % 2 - 1))
+    m = v - c
+
+    if h < 60:
+        r1 = c
+        g1 = x
+        b1 = 0
+    elif h < 120:
+        r1 = x
+        g1 = c
+        b1 = 0
+    elif h < 180:
+        r1 = 0
+        g1 = c
+        b1 = x
+    elif h < 240:
+        r1 = 0
+        g1 = x
+        b1 = c
+    elif h < 300:
+        r1 = x
+        g1 = 0
+        b1 = c
+    else:
+        r1 = c
+        g1 = 0
+        b1 = x
+    
+    r = (r1+m)*255
+    g = (g1+m)*255
+    b = (b1+m)*255
+
+    return (r, g, b)
+
 async def createRandomGradient(size = (1024, 1024), filename='gradient'):
     tenPercentX = int(size[0] / 10)
     tenPercentY = int(size[1] / 10)
