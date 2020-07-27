@@ -13,7 +13,6 @@ art
 ask
 attack
 baby
-back
 bag
 ball
 banana
@@ -35,7 +34,6 @@ block
 blood
 blow
 blue
-board
 boat
 body
 bone
@@ -48,7 +46,6 @@ box
 boy
 branch
 bread
-break
 breakfast
 bridge
 brother
@@ -118,12 +115,10 @@ dust
 duty
 ear
 earth
-east
 eat
 education
 effect
 egg
-end
 equal
 entrance
 escape
@@ -174,8 +169,6 @@ garden
 gate
 general
 gift
-give
-glad
 glass
 god
 gold
@@ -197,7 +190,6 @@ heavy
 heart
 height
 hello
-help
 hide
 high
 hit
@@ -225,7 +217,6 @@ juice
 jump
 keep
 key
-kill
 kind
 king
 kitchen
@@ -295,7 +286,6 @@ news
 newspaper
 night
 noise
-north
 nose
 nothing
 notice
@@ -349,7 +339,6 @@ power
 present
 press
 price
-private
 prize
 problem
 produce
@@ -364,7 +353,6 @@ raise
 reach
 read
 record
-red
 remove
 rent
 repair
@@ -439,7 +427,6 @@ soft
 son
 sound
 soup
-south
 space
 special
 speed
@@ -453,7 +440,6 @@ stand
 star
 start
 station
-stay
 steal
 step
 still
@@ -532,7 +518,6 @@ welcome
 west
 wheel
 while
-white
 wife
 will
 win

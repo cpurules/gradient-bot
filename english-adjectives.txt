@@ -171,7 +171,6 @@ cluttered
 coarse
 cold
 colorful
-colorless
 colossal
 comfortable
 common
@@ -250,7 +249,6 @@ demanding
 dense
 dental
 dependable
-dependent
 descriptive
 deserted
 detailed
@@ -362,7 +360,6 @@ famous
 fancy
 fantastic
 far
-faraway
 far-flung
 far-off
 fast
@@ -1285,13 +1282,10 @@ weepy
 weighty
 weird
 welcome
-well-documented
 well-groomed
 well-informed
-well-lit
 well-made
 well-off
-well-to-do
 well-worn
 wet
 which
