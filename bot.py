@@ -72,6 +72,6 @@ async def g(ctx):
 @bot.command(name='reload', help='Reload word lists for names')
 async def reload(ctx):
     print(f'Reloading word list!')
-    loadWordList()
+    loadWordLists()
 
 bot.run(DISCORD_TOKEN)
