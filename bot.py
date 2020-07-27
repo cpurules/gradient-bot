@@ -56,7 +56,7 @@ async def on_message(message):
         print(f'Generating gradient for {message.author}')
         requesters.append(message.author.id)
 
-        lib.gradient.createRandomGradient(filename=message.id)
+        await getGradient(filename=message.id)
         print(f'Gradient {message.id}.png generated, sending')
 
         gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nounes).capitalize()
@@ -66,5 +66,8 @@ async def on_message(message):
 
         os.remove(f'{message.id}.png')
         requesters.remove(message.author.id)
+
+async def getGradient(filename):
+    lib.gradient.createRandomGradient(filename)
 
 client.run(DISCORD_TOKEN)
