@@ -60,7 +60,7 @@ async def on_message(message):
         await getGradient(message.id)
         print(f'Gradient {message.id}.png generated, sending')
 
-        gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nounes).capitalize()
+        gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nouns).capitalize()
 
         gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
         await message.channel.send(file = gradientFile, content = (f'{message.author.mention} here you go!  I call this one **' + gradientName + '**'))
