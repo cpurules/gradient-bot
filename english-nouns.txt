@@ -17,7 +17,6 @@ bag
 ball
 banana
 bank
-base
 basket
 bath
 bear
@@ -28,7 +27,6 @@ bell
 bird
 birth
 birthday
-bit
 bite
 block
 blood
@@ -103,7 +101,6 @@ dinner
 direction
 dish
 dog
-door
 double
 draw
 dream
@@ -115,7 +112,6 @@ dust
 duty
 ear
 earth
-eat
 education
 effect
 egg
@@ -142,7 +138,6 @@ feed
 feel
 female
 fight
-fill
 film
 finger
 finish
@@ -190,7 +185,6 @@ heavy
 heart
 height
 hello
-hide
 high
 hit
 hole
@@ -212,7 +206,6 @@ inside
 iron
 invite
 island
-job
 juice
 jump
 keep
@@ -227,7 +220,6 @@ lady
 land
 laugh
 lead
-leave
 leg
 length
 lesson
@@ -280,7 +272,6 @@ music
 name
 nation
 nature
-neck
 net
 news
 newspaper
@@ -299,7 +290,6 @@ opposite
 order
 other
 outside
-page
 pain
 paint
 pair
@@ -333,7 +323,6 @@ point
 police
 pool
 position
-possible
 potato
 power
 present
@@ -361,7 +350,6 @@ reply
 report
 rest
 restaurant
-result
 return
 rice
 rich
@@ -371,10 +359,8 @@ rise
 road
 rock
 room
-round
 rule
 run
-rush
 sad
 safe
 sail
@@ -388,12 +374,9 @@ seat
 second
 sell
 sentence
-serve
-sex
 shake
 shape
 share
-she
 shine
 ship
 shirt
@@ -403,7 +386,6 @@ shop
 shoulder
 show
 sick
-side
 signal
 silly
 silver
@@ -428,8 +410,6 @@ son
 sound
 soup
 space
-special
-speed
 spell
 spend
 sport
@@ -466,7 +446,6 @@ table
 talk
 taste
 tea
-teach
 team
 tear
 telephone

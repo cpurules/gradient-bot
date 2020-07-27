@@ -29,7 +29,6 @@ agile
 agitated
 agonizing
 agreeable
-ajar
 alarmed
 alarming
 alert
@@ -629,7 +628,6 @@ kindhearted
 kindly
 klutzy
 knobby
-knotty
 knowledgeable
 knowing
 known
@@ -778,9 +776,7 @@ nutritious
 nutty
 obedient
 obese
-oblong
 oily
-oblong
 obvious
 occasional
 odd
