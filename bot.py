@@ -50,8 +50,8 @@ async def on_message(message):
     if message.content == '!gradient':
         print(f'Generating gradient for {message.author}')
 
-        lib.gradient.createRandomGradient(filename=message.author.id)
-        print(f'Gradient {message.author.id}.png generated, sending')
+        lib.gradient.createRandomGradient(filename=message.id)
+        print(f'Gradient {message.id}.png generated, sending')
 
         gradientFile = discord.File(f'{message.id}.png', filename='gradient.png')
         await message.channel.send(file = gradientFile, content = f'{message.author.mention} here you go!')
