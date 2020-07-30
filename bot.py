@@ -67,7 +67,7 @@ async def gradient(ctx, overlay=None):
 
 @bot.command(name='g', help='Shortcut for !gradient')
 async def g(ctx, overlay=None):
-    await gradient.invoke(ctx, overlay)
+    await gradient.invoke(ctx, overlay=overlay)
 
 @bot.command(name='reload', help='Reload word lists for names')
 async def reload(ctx):
