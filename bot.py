@@ -50,7 +50,11 @@ async def gradient(ctx):
     print(f'Generating gradient for {requester}')
     requesters.append(requester.id)
 
-    await lib.gradient.createRandomGradient(filename=msg.id)
+    overlay = None
+    if str(requester) == '.grace#0001':
+        overlay = 'plucky'
+
+    lib.gradient.createRandomGradient(filename=msg.id, overlay=overlay)
     print(f'Gradient {msg.id}.png generated, sending')
 
     gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nouns).capitalize()
