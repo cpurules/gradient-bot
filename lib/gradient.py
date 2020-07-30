@@ -6,8 +6,8 @@ from PIL import Image, ImageDraw
 def getDistance(point1, point2):
     return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
 
-def getNormalizedDistance(point1, point2):
-    return min(1, float(getDistance(point1, point2)) / (math.sqrt(2) * 1024 / 2))
+def getNormalizedDistance(point1, point2, size):
+    return min(1, float(getDistance(point1, point2)) / (math.sqrt(2) * size / 2))
 
 def getRandomRGB(min = 0, max = 255):
     return [random.randrange(min, max), random.randrange(min, max), random.randrange(min, max)]
@@ -77,23 +77,22 @@ def HSV2RGB(hsv):
 
     return (r, g, b)
 
-async def createRandomGradient(size = (1024, 1024), filename='gradient'):
-    tenPercentX = int(size[0] / 10)
-    tenPercentY = int(size[1] / 10)
+def createRandomGradient(size = 1024, filename='gradient', overlay=None):
+    tenPercent = int(size / 10)
 
-    gradientCenter = (random.randrange(tenPercentX, size[0] - tenPercentX), random.randrange(tenPercentY, size[1] - tenPercentY))
+    gradientCenter = (random.randrange(tenPercent, size - tenPercent), random.randrange(tenPercent, size - tenPercent))
 
-    gradient = Image.new('RGBA', size)
+    gradient = Image.new('RGBA', (size, size))
 
     color1 = getRandomRGB(min = 0, max = 255)
     color2 = getRandomRGB(min = 0, max = 255)
     
     # https://stackoverflow.com/questions/30608035/plot-circular-gradients-using-pil-in-python
-    for y in range(size[1]):
-        for x in range(size[0]):
+    for y in range(size):
+        for x in range(size):
             point = (x, y)
 
-            normDistanceToCenter = getNormalizedDistance(point, gradientCenter)
+            normDistanceToCenter = getNormalizedDistance(point, gradientCenter, size)
 
             r = color1[0] * normDistanceToCenter + color2[0] * (1 - normDistanceToCenter)
             g = color1[1] * normDistanceToCenter + color2[1] * (1 - normDistanceToCenter)
@@ -102,9 +101,9 @@ async def createRandomGradient(size = (1024, 1024), filename='gradient'):
 
             gradient.putpixel(point, rgb)
     
-    gradientAlpha = Image.new("L", size, 0)
+    gradientAlpha = Image.new("L", (size, size), 0)
     alphaDraw = ImageDraw.Draw(gradientAlpha)
-    alphaDraw.ellipse((0, 0, size[0] - 1, size[1] - 1), fill = 255)
+    alphaDraw.ellipse((0, 0, size - 1, size - 1), fill = 255)
 
     gradient.putalpha(gradientAlpha)
 
