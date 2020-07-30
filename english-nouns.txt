@@ -207,10 +207,7 @@ iron
 invite
 island
 juice
-jump
-keep
 key
-kind
 king
 kitchen
 knee
@@ -219,7 +216,6 @@ ladder
 lady
 land
 laugh
-lead
 leg
 length
 lesson
@@ -230,15 +226,12 @@ life
 light
 lip
 list
-listen
 lock
-look
 love
 low
 luck
 machine
 main
-make
 male
 man
 map
@@ -248,7 +241,6 @@ matter
 meal
 meat
 medicine
-meet
 member
 mention
 method
@@ -481,6 +473,7 @@ usual
 vegetable
 village
 voice
+void
 visit
 wait
 wake
