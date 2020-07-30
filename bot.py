@@ -50,6 +50,9 @@ async def gradient(ctx, overlay=None):
     print(f'Generating gradient for {requester}')
     requesters.append(requester.id)
 
+    if overlay is not None and not os.path.exists(f'overlay/{overlay}.png'):
+        overlay = None
+
     lib.gradient.createRandomGradient(filename=msg.id, overlay=overlay, size=512)
     print(f'Gradient {msg.id}.png generated, sending')
 
