@@ -39,7 +39,7 @@ async def on_ready():
     print(f'{bot.user.name} is connected!')
 
 @bot.command(name='gradient', help='Generate a random gradient and name it')
-async def gradient(ctx):
+async def gradient(ctx, overlay=None):
     requester = ctx.author
     msg = ctx.message
 
@@ -50,11 +50,7 @@ async def gradient(ctx):
     print(f'Generating gradient for {requester}')
     requesters.append(requester.id)
 
-    overlay = None
-    if str(requester) == '.grace#0001':
-        overlay = 'plucky'
-
-    lib.gradient.createRandomGradient(filename=msg.id, overlay=overlay)
+    lib.gradient.createRandomGradient(filename=msg.id, overlay=overlay, size=512)
     print(f'Gradient {msg.id}.png generated, sending')
 
     gradientName = random.choice(adjectives).capitalize() + ' ' + random.choice(nouns).capitalize()
@@ -70,8 +66,8 @@ async def gradient(ctx):
         requesters.remove(requester.id)
 
 @bot.command(name='g', help='Shortcut for !gradient')
-async def g(ctx):
-    await gradient.invoke(ctx)
+async def g(ctx, overlay=None):
+    await gradient.invoke(ctx, overlay)
 
 @bot.command(name='reload', help='Reload word lists for names')
 async def reload(ctx):
