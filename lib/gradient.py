@@ -107,4 +107,32 @@ def createRandomGradient(size = 1024, filename='gradient', overlay=None):
 
     gradient.putalpha(gradientAlpha)
 
+    if overlay is not None:
+        overlay = Image.open(f'overlay/{overlay}.png').convert('RGBA')
+        gradient = overlayImage(overlay, gradient)
+
     gradient.save(f'{filename}.png')
+
+def overlayImage(source, dest, resizeRatio = 1.25, opacity=0.6):
+    print("called overlay!")
+
+    sourceSize = source.size
+    destSize = dest.size
+
+    maxSize = (destSize[0] / resizeRatio, destSize[1] / resizeRatio)
+
+    if (sourceSize[0] > maxSize[0]) or (sourceSize[1] > maxSize[1]):
+        # we need to resize
+        sizeMultipliers = (sourceSize[0] / maxSize[0], sourceSize[1] / maxSize[1])
+        sizeMultiplier = max(sizeMultipliers)
+
+        source = source.resize((int(sourceSize[0] / sizeMultiplier), int(sourceSize[1] / sizeMultiplier)))
+        sourceSize = source.size
+
+    sourceMask = source.split()[-1].point(lambda p: p * opacity)
+
+    pasteOffsets = (int((destSize[0] - sourceSize[0]) / 2), int((destSize[1] - sourceSize[1]) / 2))
+
+    dest.paste(source, pasteOffsets, sourceMask)
+
+    return dest
