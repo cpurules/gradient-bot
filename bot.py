@@ -52,6 +52,8 @@ async def gradient(ctx, overlay=None):
 
     if overlay is not None and not os.path.exists(f'overlay/{overlay}.png'):
         overlay = None
+    else:
+        print(f'Overlay requested: {overlay}')
 
     lib.gradient.createRandomGradient(filename=msg.id, overlay=overlay, size=512)
     print(f'Gradient {msg.id}.png generated, sending')
@@ -67,6 +69,7 @@ async def gradient(ctx, overlay=None):
     finally:
         os.remove(f'{msg.id}.png')
         requesters.remove(requester.id)
+        print('')
 
 @bot.command(name='g', help='Shortcut for !gradient')
 async def g(ctx, overlay=None):
