@@ -113,7 +113,7 @@ def createRandomGradient(size = 1024, filename='gradient', overlay=None):
 
     gradient.save(f'{filename}.png')
 
-def overlayImage(source, dest, resizeRatio = 1.25, opacity=0.6):
+def overlayImage(source, dest, resizeRatio = 1.25, opacity=0.7):
     sourceSize = source.size
     destSize = dest.size
 
