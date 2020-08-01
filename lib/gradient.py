@@ -109,7 +109,7 @@ def createRandomGradient(size = 1024, filename='gradient', overlay=None):
 
     if overlay is not None:
         overlay = Image.open(f'overlay/{overlay}.png').convert('RGBA')
-        gradient = overlayImage(overlay, gradient, resizeRatio = 1.25, opacity = 0.7)
+        gradient = overlayImage(overlay, gradient, resizeRatio = 1.5, opacity = 0.7)
 
     gradient.save(f'{filename}.png')
 
